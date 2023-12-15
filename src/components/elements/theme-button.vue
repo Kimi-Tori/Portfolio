@@ -46,7 +46,6 @@ export default {
     background-color: $black !important;
     box-shadow: none !important;
     border-radius: 0 0 50px 0;
-    animation: wave 15s infinite linear;
 
     .dark-theme & {
       background-color: $white !important;
