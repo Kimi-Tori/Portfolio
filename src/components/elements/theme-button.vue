@@ -1,0 +1,62 @@
+<template>
+  <div class="theme-button">
+    <v-btn @click="toggleTheme">
+      <svg
+        width="40"
+        height="40"
+        viewBox="0 0 40 40"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g clip-path="url(#clip0_2_14)">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M17.6499 0.928254C18.9723 -0.309417 21.0278 -0.309419 22.3502 0.928254L26.3494 4.67128L31.824 4.85241C33.6341 4.91228 35.0877 6.36584 35.1476 8.17607L35.3288 13.6506L39.0718 17.6497C40.3094 18.9721 40.3094 21.0278 39.0718 22.3502L35.3288 26.3494L35.1476 31.8239C35.0877 33.6341 33.6341 35.0878 31.824 35.1476L26.3494 35.3287L22.3502 39.0717C21.0278 40.3094 18.9723 40.3094 17.6499 39.0717L13.6506 35.3287L8.17608 35.1476C6.36586 35.0878 4.9123 33.6341 4.8524 31.8239L4.67127 26.3494L0.928255 22.3502C-0.309417 21.0278 -0.309419 18.9721 0.928254 17.6497L4.67127 13.6506L4.8524 8.17607C4.9123 6.36584 6.36584 4.91228 8.17608 4.85241L13.6506 4.67128L17.6499 0.928254ZM14.123 9.05481C15.6522 8.35294 17.3525 7.9625 19.1394 7.9625C25.7875 7.9625 31.1769 13.3519 31.1769 20C31.1769 26.6481 25.7875 32.0375 19.1394 32.0375C17.3525 32.0375 15.6522 31.6469 14.123 30.9451C13.5122 30.6648 13.1207 30.0544 13.1207 29.3823C13.1207 28.7101 13.5122 28.0997 14.123 27.8194C17.0868 26.4591 19.1394 23.4675 19.1394 20C19.1394 16.5325 17.0868 13.5409 14.123 12.1806C13.5122 11.9002 13.1207 11.2898 13.1207 10.6177C13.1207 9.94562 13.5122 9.33515 14.123 9.05481Z"
+            fill="#EBEBEB"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_2_14">
+            <rect width="40" height="40" fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+    </v-btn>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "theme-button",
+  methods: {
+    toggleTheme() {
+      document.body.classList.toggle("dark-theme");
+    },
+  },
+};
+</script>
+
+<style lang="scss">
+.theme-button {
+  position: relative;
+
+  & .v-btn {
+    height: 100px;
+    width: 100px;
+    background-color: $black !important;
+    box-shadow: none !important;
+    border-radius: 0 0 50px 0;
+    animation: wave 15s infinite linear;
+
+    .dark-theme & {
+      background-color: $white !important;
+    }
+  }
+
+  & svg path {
+    .dark-theme & {
+      fill: $black !important;
+    }
+  }
+}
+</style>

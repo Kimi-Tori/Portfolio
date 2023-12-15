@@ -1,0 +1,16 @@
+body {
+    background-color: $grey;
+    color: $text-black;
+    transition: background-color 0.5s, color 0.5s;
+
+    &.dark-theme {
+        background-color: $black;
+        color: $grey;
+    }
+}
+
+.v-container {
+    @include up($xl) {
+        max-width: 1194px !important;
+    }
+}

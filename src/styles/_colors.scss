@@ -1,0 +1,17 @@
+.color {
+    &-white {
+        color: $white;
+    }
+
+    &-black {
+        color: $black;
+    }
+
+    &-text-black {
+        color: $text-black;
+    }
+
+    &-purple {
+        color: $purple;
+    }
+}
