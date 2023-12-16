@@ -1,7 +1,7 @@
 <template>
   <div :class="['intro', { 'dark-theme': isDarkTheme }]">
-    <intro-template class="intro__intro-template" />
-    <theme-button class="intro__theme-button" @click="toggleTheme" />
+    <intro-template :dark="isDarkTheme" class="intro__intro-template" />
+    <theme-button :dark="isDarkTheme" class="intro__theme-button" @click="toggleTheme" />
   </div>
 </template>
 
@@ -14,7 +14,7 @@ export default {
   components: { IntroTemplate, ThemeButton },
   data() {
     return {
-      isDarkTheme: false,
+      isDarkTheme: true,
     };
   },
   methods: {
@@ -43,8 +43,9 @@ export default {
 
   &__theme-button {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="theme-button">
-    <v-btn @click="toggleTheme">
+    <v-btn :class="['theme-button__btn', { '--dark' : dark }]">
       <svg
         width="40"
         height="40"
@@ -28,26 +28,27 @@
 <script>
 export default {
   name: "theme-button",
-  methods: {
-    toggleTheme() {
-      document.body.classList.toggle("dark-theme");
-    },
-  },
+  props: {
+    dark: Boolean,
+  }
 };
 </script>
 
 <style lang="scss">
 .theme-button {
-  position: relative;
 
   & .v-btn {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
     background-color: $black !important;
     box-shadow: none !important;
-    border-radius: 0 0 50px 0;
+    border-radius: 100px;
 
-    .dark-theme & {
+    &:hover {
+      animation: rotate 8s linear infinite;
+    }
+
+    &.--dark {
       background-color: $white !important;
     }
   }

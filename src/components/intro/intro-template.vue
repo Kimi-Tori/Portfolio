@@ -6,26 +6,51 @@
         class="intro-template__container-image"
       />
 
-      <div class="intro-template__container-text">
+      <div :class="['intro-template__container-text', { '--dark': dark }]">
         <h1 class="h1">Sergey Aldushin</h1>
         <p class="mt-6 size-parag">Front-end Developer</p>
 
-        <v-btn class="intro-template__container-text__button">About Me</v-btn>
+        <v-dialog v-model="dialog" width="1200">
+          <template v-slot:activator="{ on }">
+            <button-purple @click="dialog = true" class="intro-template__container-text__button">
+              About Me
+            </button-purple>
+          </template>
+          <template v-slot:default>
+            <intro-about :dark="dark" @closeDialog="closeDialog" />
+          </template>
+        </v-dialog>
       </div>
     </v-container>
   </section>
 </template>
 
 <script>
+import IntroAbout from '@/components/intro/intro-about.vue';
+import ButtonPurple from '@/components/elements/button-purple.vue'
+
 export default {
-  name: "itro-template",
+  name: "intro-template",
+  components: { IntroAbout, ButtonPurple },
+  props: {
+    dark: Boolean,
+  },
+  data() {
+    return {
+      dialog: false,
+    }
+  },
+  methods: {
+    closeDialog() {
+      this.dialog = false;
+    }
+  }
 };
 </script>
 
 <style lang="scss">
 .intro-template {
   min-height: 100vh;
-  color: $text-black;
 
   &__container {
     position: relative !important;
@@ -44,22 +69,19 @@ export default {
       position: relative;
       z-index: 1;
       margin-top: 120px;
+      color: $text-black;
+
+      &.--dark {
+        color: $grey;
+      }
 
       &__button {
         margin-top: 78px;
-        box-shadow: none !important;
         height: 80px !important;
         width: 200px !important;
-        border-radius: 20px !important;
-        background-color: $purple !important;
 
         & .v-btn__content {
-          color: $grey;
-          text-transform: none;
-          font-family: "League Spartan";
           font-size: 24px;
-          font-weight: 400;
-          line-height: 24px;
         }
       }
     }
