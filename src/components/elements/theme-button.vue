@@ -38,8 +38,8 @@ export default {
 .theme-button {
 
   & .v-btn {
-    height: 80px;
-    width: 80px;
+    height: 80px !important;
+    width: 80px !important;
     background-color: $black !important;
     box-shadow: none !important;
     border-radius: 100px;

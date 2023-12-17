@@ -21,7 +21,7 @@ $z-index-top: 2;
 $xs: 0;
 $sm: 768px;
 $md: 1280px;
-$lg: 1366px;
+$lg: 1360px;
 $xl: 1920px;
 
 /* Container */
@@ -32,25 +32,25 @@ $container-max-width--xl: $xl;
 
 /* Vuetify variables */
 /* @use 'vuetify/settings' with (
-  $body-font-family: 'Montserrat',
-  $application-background: $light-peach,
-  $font-size-root: 15px,
-  $button-font-size: 11px,
-  $button-font-weight: 600,
-  $button-text-letter-spacing: normal,
-  $grid-breakpoints: (
-    xs: $xs,
-    sm: $sm,
-    md: $md,
-    lg: $lg,
-    xl: $xl,
-  ),
-  $container-max-widths: (
-    sm: $container-max-width--sm,
-    md: $container-max-width--md,
-    lg: $container-max-width--lg,
-    xl: $container-max-width--xl,
-  )
+$body-font-family: 'Montserrat',
+$application-background: $black,
+$font-size-root: 15px,
+$button-font-size: 11px,
+$button-font-weight: 600,
+$button-text-letter-spacing: normal,
+$grid-breakpoints: (
+xs: $xs,
+sm: $sm,
+md: $md,
+lg: $lg,
+xl: $xl,
+),
+$container-max-widths: (
+sm: $container-max-width--sm,
+md: $container-max-width--md,
+lg: $container-max-width--lg,
+xl: $container-max-width--xl,
+)
 ); */
 
 @import 'mixins';

@@ -8,6 +8,12 @@ export default [
                 name: 'intro',
                 component: () => import('@/views/intro.vue'),
             },
+            {
+                /* Главная */
+                path: '/skils',
+                name: 'skils',
+                component: () => import('@/views/skils.vue'),
+            },
         ]
     }
 ];

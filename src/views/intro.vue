@@ -1,6 +1,6 @@
 <template>
   <div :class="['intro', { 'dark-theme': isDarkTheme }]">
-    <intro-template :dark="isDarkTheme" class="intro__intro-template" />
+    <intro-template :dark="isDarkTheme" class="intro__template" />
     <theme-button :dark="isDarkTheme" class="intro__theme-button" @click="toggleTheme" />
   </div>
 </template>
@@ -33,12 +33,6 @@ export default {
 
   &.dark-theme {
     background-color: $black;
-
-    &__intro-template {
-    }
-  }
-
-  &__intro-template {
   }
 
   &__theme-button {
