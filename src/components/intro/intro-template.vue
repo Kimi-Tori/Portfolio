@@ -6,22 +6,31 @@
         class="intro-template__container-image"
       />
 
-      <div :class="['intro-template__container-text d-flex flex-column align-center align-md-start', { '--dark': dark }]">
-        <h1 class="h1">Sergey Aldushin</h1>
+      <div
+        :class="[
+          'intro-template__container-text d-flex flex-column align-center align-md-start',
+          { '--dark': dark },
+        ]"
+      >
+        <h1 class="h1 text-center">Sergey Aldushin</h1>
         <p class="mt-6 size-parag">Front-end Developer</p>
 
         <v-dialog v-model="dialog" width="1200">
-          <template v-slot:activator="{ on }">
-          <div class='d-flex mt-12'>
-            <button-purple @click="dialog = true" class="intro-template__container-text__button">
-              About Me
-            </button-purple>
+          <template v-slot:activator="{}">
+            <div class="d-flex flex-column flex-md-row mt-12">
+              <button-purple
+                @click="dialog = true"
+                class="intro-template__container-text__button"
+              >
+                About Me
+              </button-purple>
 
-            <router-link :to="{ name: 'skils' }" class='ml-6'>
-              <button-purple class='intro-template__container-text__button'>About My Skils</button-purple>
-            </router-link>
-          </div>
-            
+              <router-link :to="{ name: 'skils' }" class="mt-3 mt-md-0 ml-md-6">
+                <button-purple class="intro-template__container-text__button"
+                  >About My Skils</button-purple
+                >
+              </router-link>
+            </div>
           </template>
           <template v-slot:default>
             <intro-about :dark="dark" @closeDialog="closeDialog" />
@@ -33,8 +42,8 @@
 </template>
 
 <script>
-import IntroAbout from '@/components/intro/intro-about.vue';
-import ButtonPurple from '@/components/elements/button-purple.vue'
+import IntroAbout from "@/components/intro/intro-about.vue";
+import ButtonPurple from "@/components/elements/button-purple.vue";
 
 export default {
   name: "intro-template",
@@ -45,13 +54,13 @@ export default {
   data() {
     return {
       dialog: false,
-    }
+    };
   },
   methods: {
     closeDialog() {
       this.dialog = false;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -66,7 +75,7 @@ export default {
     height: 100%;
 
     &-image {
-      width: 330px;
+      width: 280px;
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
@@ -94,8 +103,13 @@ export default {
       }
 
       &__button {
-        height: 80px !important;
-        width: 200px !important;
+        width: 190px !important;
+        height: 60px !important;
+
+        @include up($md) {
+          height: 80px !important;
+          width: 200px !important;
+        }
 
         & .v-btn__content {
           font-size: 24px;

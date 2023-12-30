@@ -5,13 +5,15 @@ body {
 
     &::-webkit-scrollbar {
         width: 10px;
-    }
-    &::-webkit-scrollbar-track {
-        background-color: $grey;
-    }
-    &::-webkit-scrollbar-thumb {
-        background-color: $black;
-        border-radius: 100px;
+
+        &-track {
+            background-color: $grey;
+        }
+
+        &-thumb {
+            background-color: $black;
+            border-radius: 100px;
+        }
     }
 
     &.dark-theme {

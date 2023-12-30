@@ -1,6 +1,6 @@
 <template>
   <div class="theme-button">
-    <v-btn :class="['theme-button__btn', { '--dark' : dark }]">
+    <v-btn :class="['theme-button__btn', { '--dark': dark }]">
       <svg
         width="40"
         height="40"
@@ -30,23 +30,18 @@ export default {
   name: "theme-button",
   props: {
     dark: Boolean,
-  }
+  },
 };
 </script>
 
 <style lang="scss">
 .theme-button {
-
   & .v-btn {
     height: 80px !important;
     width: 80px !important;
     background-color: $black !important;
     box-shadow: none !important;
     border-radius: 100px;
-
-    &:hover {
-      animation: rotate 8s linear infinite;
-    }
 
     &.--dark {
       background-color: $white !important;

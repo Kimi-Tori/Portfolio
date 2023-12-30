@@ -1,7 +1,11 @@
 <template>
   <div :class="['intro', { 'dark-theme': isDarkTheme }]">
+    <theme-button
+      :dark="isDarkTheme"
+      class="intro__theme-button"
+      @click="toggleTheme"
+    />
     <intro-template :dark="isDarkTheme" class="intro__template" />
-    <theme-button :dark="isDarkTheme" class="intro__theme-button" @click="toggleTheme" />
   </div>
 </template>
 
@@ -11,15 +15,19 @@ import ThemeButton from "@/components/elements/theme-button.vue";
 
 export default {
   name: "intro",
-  components: { IntroTemplate, ThemeButton },
+  components: { ThemeButton, IntroTemplate },
   data() {
     return {
-      isDarkTheme: true,
+      isDarkTheme: false,
     };
   },
   methods: {
     toggleTheme() {
       this.isDarkTheme = !this.isDarkTheme;
+      this.updateBodyClass();
+    },
+    updateBodyClass() {
+      document.body.classList.toggle("dark-theme", this.isDarkTheme);
     },
   },
 };
@@ -39,6 +47,7 @@ export default {
     position: absolute;
     top: 10px;
     left: 50%;
+    z-index: 2;
     transform: translateX(-50%);
   }
 }
