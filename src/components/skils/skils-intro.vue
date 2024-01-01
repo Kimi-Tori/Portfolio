@@ -20,7 +20,7 @@
           project.<br />
           <br />I am a strong advocate of a design approach focused primarily on
           <span>mobile devices</span>, and I am proud to create
-          <span>responsive</span> and <span>user-friendly</span> interfaces.
+          <span>responsive</span> and <span>user-frendly</span> interfaces.
           <span>My portfolio</span> includes a collection of websites and web
           applications that reflect my commitment to
           <span>high-quality site displays</span>.<br />

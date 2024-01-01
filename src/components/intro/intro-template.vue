@@ -71,7 +71,6 @@ export default {
   &__container {
     position: relative !important;
     max-height: 600px;
-    min-height: 600px;
     height: 100%;
 
     &-image {

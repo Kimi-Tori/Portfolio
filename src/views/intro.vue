@@ -25,10 +25,15 @@ export default {
     toggleTheme() {
       this.isDarkTheme = !this.isDarkTheme;
       this.updateBodyClass();
+      localStorage.setItem('isDarkTheme', this.isDarkTheme);
     },
     updateBodyClass() {
       document.body.classList.toggle("dark-theme", this.isDarkTheme);
     },
+  },
+  created() {
+    this.isDarkTheme = this.$store.state.isDarkTheme || (localStorage.getItem('isDarkTheme') === 'true');
+    this.updateBodyClass();
   },
 };
 </script>

@@ -2,11 +2,12 @@ import Vuex from 'vuex';
 
 export default new Vuex.Store({
   state: {
-    theme: 'light',
+    isDarkTheme: false
   },
   mutations: {
     toggleTheme(state) {
-      state.theme = state.theme === 'light' ? 'dark' : 'light';
-    },
-  },
+      state.isDarkTheme = !state.isDarkTheme;
+      localStorage.setItem('isDarkTheme', state.isDarkTheme);
+    }
+  }
 });

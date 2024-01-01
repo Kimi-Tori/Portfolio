@@ -110,6 +110,7 @@ export default {
   position: relative;
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
   min-height: 600px;
+  height: 100%;
 
   &__close {
     position: absolute;

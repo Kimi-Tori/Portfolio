@@ -1,7 +1,7 @@
 <template>
   <section class="skils-portfolio">
     <v-container class="d-flex flex-column align-center justify-center">
-      <portfolio-item :items="items" />
+      <portfolio-item :items='this.items' />
     </v-container>
   </section>
 </template>
@@ -16,22 +16,26 @@ export default {
     return {
       items: [
         {
-          src: "./assets/portfolio/portfolio-item-1.jpg",
+          link: 'https://vk.com',
+          src: "src/assets/portfolio/portfolio-img-1.jpg",
           title: "Samsung OLED",
           subtitle: "I made an OLED 8K page",
         },
         {
-          src: "./assets/portfolio/portfolio-item-1.jpg",
+          link: 'https://vk.com',
+          src: "src/assets/portfolio/portfolio-img-1.jpg",
           title: "Samsung OLED",
           subtitle: "I made an OLED 8K page",
         },
         {
-          src: "./assets/portfolio/portfolio-item-1.jpg",
+          link: 'https://vk.com',
+          src: "src/assets/portfolio/portfolio-img-1.jpg",
           title: "Samsung OLED",
           subtitle: "I made an OLED 8K page",
         },
         {
-          src: "./assets/portfolio/portfolio-item-1.jpg",
+          link: 'https://vk.com',
+          src: "src/assets/portfolio/portfolio-img-1.jpg",
           title: "Samsung OLED",
           subtitle: "I made an OLED 8K page",
         },
@@ -43,5 +47,6 @@ export default {
 
 <style lang="scss">
 .skils-portfolio {
+  background-color: $grey;
 }
 </style>
