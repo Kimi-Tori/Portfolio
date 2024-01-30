@@ -49,8 +49,10 @@
           <div
             v-for="(item, index) in items"
             :key="index"
-            class="intro-about__left-container__skils-item size-about__span d-flex flex-column align-center"
-            :class="{ 'mr-8': index !== items.length - 1 }"
+            :class="{
+              'intro-about__left-container__skils-item size-about__span d-flex flex-column align-center mr-8':
+                index !== items.length - 1,
+            }"
           >
             <v-img :src="item.svg" />
             <span class="mt-2">{{ item.text }}</span>

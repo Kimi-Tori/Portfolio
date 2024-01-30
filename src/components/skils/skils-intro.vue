@@ -31,11 +31,17 @@
           <span>attention to detail</span>.
         </p>
 
-        <router-link :to="{ name: 'intro' }" class="mt-8">
+        <router-link :to="{ name: 'intro' }" class="mt-8 mb-12">
           <button-purple class="skils-intro__container-text__button"
             >Back To Home</button-purple
           >
         </router-link>
+
+        <button-scroll
+          class="skils-intro__container-text__scroll"
+          :dark="dark"
+          @click="scrollToNextBlock"
+        />
       </div>
     </v-container>
   </section>
@@ -43,18 +49,27 @@
 
 <script>
 import ButtonPurple from "@/components/elements/button-purple.vue";
+import ButtonScroll from "@/components/elements/button-scroll.vue";
 
 export default {
   name: "skils-intro",
-  components: { ButtonPurple },
+  components: { ButtonPurple, ButtonScroll },
   props: {
     dark: Boolean,
+  },
+  methods: {
+    scrollToNextBlock() {
+      const nextBlock = document.getElementById("skils-portfolio");
+      nextBlock.scrollIntoView({ behavior: "smooth" });
+    },
   },
 };
 </script>
 
 <style lang="scss">
 .skils-intro {
+  border-bottom: 5px solid $black;
+
   &__container {
     position: relative !important;
     min-height: 100vh;
@@ -103,6 +118,13 @@ export default {
         & .v-btn__content {
           font-size: 24px;
         }
+      }
+
+      &__scroll {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
   }
